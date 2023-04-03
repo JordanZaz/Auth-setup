@@ -1,0 +1,29 @@
+
+{% extends "account/base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ username }}</h1>
+
+
+    <a href="{% url 'account_change_password' %}">Change Password</a>
+    <br>
+    <br>
+    <a href="{% url 'change_username' %}">Change Username</a>
+    <br>
+    <br>
+
+
+    <form method="post" action="{% url 'delete_account' %}">
+      {% csrf_token %}
+      <button type="submit" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</button>
+    </form>
+
+    <br>
+    {% if user.emailaddress_set.all.0.verified %}
+        <a href="{% url 'two_factor:setup' %}" class="btn btn-primary">Purchase</a>
+    {% else %}
+        <p>Please verify your email address before proceeding.</p>
+    {% endif %}
+
+{% endblock %}
+

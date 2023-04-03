@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block content %}
+    <h1>Login</h1>
+    <form method="post" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <br>
+    <a href="{% provider_login_url 'google' %}">Sign up with Google</a>
+    <a href="{% provider_login_url 'microsoft' %}">Sign up with Microsoft</a>
+{% endblock %}

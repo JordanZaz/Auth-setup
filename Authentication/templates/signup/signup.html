@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+    {% load socialaccount %}
+    {% providers_media_js %}
+    <form method="post" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% provider_login_url 'google' %}">Sign in with Google</a>
+    <a href="{% provider_login_url 'microsoft' %}">Sign in with Microsoft</a>
+{% endblock %}
