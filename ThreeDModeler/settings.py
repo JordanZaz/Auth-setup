@@ -214,8 +214,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'noreplytwatr@gmail.com'
-EMAIL_HOST_PASSWORD = 'jbbhxxlqjnwjgkjo'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -223,8 +223,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online', 'prompt': 'select_account'},
         'APP': {
-            'client_id': '1000137764103-acm95dd9ri1412jmj2ttmuhegv4ipvai.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     },
@@ -236,14 +236,14 @@ SOCIALACCOUNT_PROVIDERS = {
         },
         'SCOPE': ['User.Read', 'email', 'openid'],
         'APP': {
-            'client_id': '0b39448e-f0ea-4694-915e-d40381ba04db',
-            'secret': 'olF8Q~apa.c9Ft6NB6uMB2slJ0aZQ8F2DmcOGa9s',
+            'client_id': '',
+            'secret': '',
             'key': '',
             'authorization_url': 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
             'access_token_url': 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
             'logout_url': 'https://login.microsoftonline.com/common/oauth2/logout',
             'login_url': 'https://login.microsoftonline.com/common/oauth2/authorize',
-            'TENANT': 'ba31c062-6059-4555-9f75-e3b34307d0dd',
+            'TENANT': '',
             'response_type': 'code',
             'redirect_uri': 'http://localhost:8000/auth/accounts/microsoft/login/callback/',
         }
